@@ -8,6 +8,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ChildComponent } from './inheritance/child.component';
 import { MasterComponent } from './nested/master.component';
 import { ParenthooksComponent } from './hooks/parenthooks.component';
+import { TemplatedrivenComponent } from './templatedriven/templatedriven.component';
+import { ModeldrivenComponent } from './modeldriven/modeldriven.component';
 
 const routes: Routes = [
     { path: '', component: DatabindingComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
     { path: 'inheritance', component: ChildComponent },
     { path: 'nested', component: MasterComponent },
     { path: 'hooks', component: ParenthooksComponent },
+    { path: 'templatedriven', component: TemplatedrivenComponent },
+    { path: 'modeldriven', component: ModeldrivenComponent },
     { path: '**', redirectTo: 'notfound' },
     { path: 'notfound', component: NotfoundComponent }
 ];

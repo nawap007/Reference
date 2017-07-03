@@ -1,0 +1,83 @@
+<h2>Template Driven</h2>
+<hr>
+<form class="form-horizontal" [formGroup]="regForm" #userForm="ngForm" (ngSubmit)="SaveData(userForm)">
+  <div class="form-group">
+    <label class="col-sm-2">Name</label>
+    <div class="col-sm-10">
+      <input type="text" name="Name" formControlName="Name" class="form-control"/>
+      <div *ngIf="regForm.get('Name').errors && (userForm.submitted || regForm.get('Name').touched)" class="text-danger">
+        Please Enter Name
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Username</label>
+    <div class="col-sm-10">
+      <input type="text"  name="Username" formControlName="Username" class="form-control"/>
+      <div *ngIf="regForm.get('Username').errors && (userForm.submitted || regForm.get('Username').dirty)" class="text-danger">
+        <span [hidden]="!regForm.get('Username').errors.required">Please Enter Username</span>
+        <span [hidden]="!regForm.get('Username').errors.minlength">Username must have 4 chars</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Password</label>
+    <div class="col-sm-10">
+      <input type="password" name="Password"  formControlName="Password" class="form-control"/>
+      <div *ngIf="regForm.get('Password').errors && (userForm.submitted || regForm.get('Password').dirty)" class="text-danger">
+        <span [hidden]="!regForm.get('Password').errors.required">Please Enter Password</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">ConfirmPassword</label>
+    <div class="col-sm-10">
+      <input type="password"  name="ConfirmPassword"  formControlName="ConfirmPassword" validateEqualTo="Password" class="form-control"/>
+      <div *ngIf="regForm.get('ConfirmPassword').errors && (userForm.submitted || regForm.get('ConfirmPassword').dirty)" class="text-danger">
+        <span [hidden]="!regForm.get('ConfirmPassword').errors.required">Please Enter Confirm Password</span>
+        <span [hidden]="!(!regForm.get('ConfirmPassword').errors.required && regForm.get('ConfirmPassword').hasError('validateEqual'))">Confirm Password doesn't matched</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Country</label>
+    <div class="col-sm-10">
+      <select  name="Country"  formControlName="Country"   class="form-control">
+        <option value="">--Select--</option>
+        <option *ngFor="let item of countryList" [value]="item.id">{{item.name}}</option>
+      </select>
+      <div *ngIf="regForm.get('Country').errors && (userForm.submitted || regForm.get('Country').dirty)" class="text-danger">
+        <span [hidden]="!regForm.get('Country').errors.required">Please Select Country</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Address</label>
+    <div class="col-sm-10">
+      <textarea name="Address"  formControlName="Address"  class="form-control"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Contact</label>
+    <div class="col-sm-10">
+      <input type="text" name="Contact" formControlName="Contact"   class="form-control"/>
+      <div *ngIf="regForm.get('Contact').errors && (userForm.submitted || regForm.get('Contact').dirty)" class="text-danger">
+        <span [hidden]="!regForm.get('Contact').errors.pattern">Please Enter Correct No.</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2">Accept Terms</label>
+    <div class="col-sm-10">
+      <input type="checkbox"  formControlName="Terms"  name="Terms" />
+      <div *ngIf="regForm.get('Terms').errors && (userForm.submitted || regForm.get('Terms').dirty)" class="text-danger">
+        <span [hidden]="!regForm.get('Terms').errors.required">Please Accept Terms</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>
