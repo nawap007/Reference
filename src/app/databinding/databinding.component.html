@@ -1,3 +1,14 @@
-<p>
-  databinding works!
-</p>
+<h2>Data Binding</h2>
+<h3>Interpolation</h3>
+<p>Company : {{company}}, Name: {{name}}</p>
+<input type="text" value="{{name}}"/>
+
+<h3>Two Way Data Binding</h3>
+<input type="text" [(ngModel)]="name"/>
+
+<h3>Property Binding</h3>
+<input type="text" [value]="name"/>
+<p>Url : <a [href]="url">Site</a></p>
+
+<h3>Event Binding</h3>
+<button type="button" (click)="greet()">Say Hello!</button>

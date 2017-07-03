@@ -1,0 +1,24 @@
+<h2>Built-In Dir</h2>
+<h3>ngIf</h3>
+<p>
+  <input type="number" [(ngModel)]="num" />
+</p>
+<div *ngIf="num!=undefined && num%2==0">
+  Even Number
+</div>
+<div *ngIf="num!=undefined  && num%2>0">
+  Odd Number
+</div>
+<h3>ngFor</h3>
+<ol>
+  <li *ngFor="let item of colors; let i=index">
+   {{i+1}} {{item}}
+  </li>
+</ol>
+<h3>ngSwitch</h3>
+<input type="text" [(ngModel)]="alphabet" />
+<div [ngSwitch]="alphabet">
+  <div *ngSwitchCase="'a'">vowel</div>
+   <div *ngSwitchCase="'e'">vowel</div>
+  <div *ngSwitchDefault>Not vowel</div>
+</div>

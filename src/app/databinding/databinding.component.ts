@@ -5,12 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './databinding.component.html',
   styleUrls: ['./databinding.component.css']
 })
-export class DatabindingComponent implements OnInit {
-
+export class DatabindingComponent {
+  company:string='Dot Net Tricks';
+  name:string ='Shailendra';
+  address:string='Noida';
+  url:string='http://www.dotnettricks.com'
   constructor() { }
 
-  ngOnInit() {
-    
+  greet(){
+    console.log('Hi!');
+    console.log(this.name);
   }
-
 }

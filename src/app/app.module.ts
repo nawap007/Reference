@@ -5,20 +5,20 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+import { BuitindirComponent } from './buitindir/buitindir.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatabindingComponent
+    DatabindingComponent,
+    BuitindirComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [
-    
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
