@@ -1,0 +1,22 @@
+<h2>Pipe</h2>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>SNo.</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Salary</th>
+      <th>Joining</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees | orderBy : 'name' : false;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{emp.name | uppercase | reverse}}</td>
+      <td>{{emp.address | lowercase}}</td>
+      <td>{{emp.salary | currency:'INR'}}</td>
+      <td>{{emp.joining | date:'dd/MM/yyyy'}}</td>
+    </tr>
+  </tbody>
+</table>

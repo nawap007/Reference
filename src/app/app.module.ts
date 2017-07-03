@@ -2,21 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { Ng2OrderPipe } from 'ng2-order-pipe';
 
 import { AppComponent } from './app.component';
-import { DatabindingComponent } from './databinding/databinding.component';
-import { BuitindirComponent } from './buitindir/buitindir.component';
+import { ReversePipe } from './reverse.pipe';
+import { AppRoutingModule, routedComponents } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatabindingComponent,
-    BuitindirComponent
+    ReversePipe,
+    Ng2OrderPipe,
+    routedComponents
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

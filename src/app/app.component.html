@@ -1,6 +1,31 @@
-<h1>
+<!--<h1>
   {{title}}
 </h1>
 <p>This is my Para!</p>
-<!--<app-databinding>Loading...</app-databinding>-->
+<app-databinding>Loading...</app-databinding>
 <app-buitindir></app-buitindir>
+<app-builtinpipe></app-builtinpipe>
+-->
+
+
+<div class="navbar navbar-default">
+  <a class="navbar-brand" [routerLink]="['/']">Angular App</a>
+  <ul class="nav navbar-nav">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a [routerLink]="['/']">Data Binding</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/dir']">Built-In dir</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/pipe']">Pipe</a>
+    </li>
+     <li routerLinkActive="active">
+      <a [routerLink]="['/about','4']" [queryParams]="{name:'Shailendra'}">About</a>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

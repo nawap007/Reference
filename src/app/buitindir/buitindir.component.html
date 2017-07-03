@@ -1,14 +1,32 @@
 <h2>Built-In Dir</h2>
-<h3>ngIf</h3>
 <p>
   <input type="number" [(ngModel)]="num" />
 </p>
+<h3>If Then Else</h3>
+<div *ngIf="num!=undefined && num%2==0; then tif else telse"></div>
+<ng-template #tif>
+   Even Number
+</ng-template>
+<ng-template #telse>
+  Odd Number
+</ng-template>
+
+<h3>If Else</h3>
+<div *ngIf="num!=undefined && num%2==0; else tielse">
+  Even Number
+</div>
+<ng-template #tielse>
+  Odd Number
+</ng-template>
+
+<h3>ngIf</h3>
 <div *ngIf="num!=undefined && num%2==0">
   Even Number
 </div>
 <div *ngIf="num!=undefined  && num%2>0">
   Odd Number
 </div>
+
 <h3>ngFor</h3>
 <ol>
   <li *ngFor="let item of colors; let i=index">
