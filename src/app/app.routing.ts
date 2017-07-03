@@ -5,12 +5,18 @@ import { BuitindirComponent } from './buitindir/buitindir.component';
 import { BuiltinpipeComponent } from './builtinpipe/builtinpipe.component';
 import { AboutComponent } from './about/about.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { ChildComponent } from './inheritance/child.component';
+import { MasterComponent } from './nested/master.component';
+import { ParenthooksComponent } from './hooks/parenthooks.component';
 
 const routes: Routes = [
     { path: '', component: DatabindingComponent },
     { path: 'dir', component: BuitindirComponent },
     { path: 'about/:id', component: AboutComponent },
     { path: 'pipe', component: BuiltinpipeComponent },
+    { path: 'inheritance', component: ChildComponent },
+    { path: 'nested', component: MasterComponent },
+    { path: 'hooks', component: ParenthooksComponent },
     { path: '**', redirectTo: 'notfound' },
     { path: 'notfound', component: NotfoundComponent }
 ];

@@ -1,0 +1,10 @@
+<h3>Child Hooks</h3>
+
+<input type="text" [(ngModel)]="company" />
+<button type="button" (click)="AddRow()">AddRow</button>
+
+<ul>
+  <li *ngFor="let item of colors">
+    {{item}}
+  </li>
+</ul>
